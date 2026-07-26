@@ -102,10 +102,12 @@ MCP服务器的操作方式如下：
     - <strong>MCP主机</strong>将工具调用路由到一个或多个提供特定功能的<strong>MCP服务器</strong>（如搜索、计算、数据库查询）。
     - <strong>MCP服务器</strong>执行相关操作并以一致格式返回结果给<strong>MCP主机</strong>。
     - <strong>MCP主机</strong>格式化并传递结果给<strong>AI模型</strong>。
-- <strong>响应完成</strong>：
+    - <strong>响应完成</strong>：
     - <strong>AI模型</strong>将工具输出整合至最终响应中。
     - <strong>MCP主机</strong>将该响应发送回<strong>MCP客户端</strong>，后者传递给最终用户或调用软件。
     
+
+### 👉 示例：MCP服务器的操作流程
 
 ```mermaid
 ---
@@ -122,7 +124,7 @@ graph TD
     H -->|MCP Protocol| T4[MCP Server Tool 04: 文件系统工具]
     H -->|发送响应| Client
 
-    subgraph “MCP 主机组件”
+    subgraph "MCP 主机组件"
         H
         G[工具注册表]
         I[身份验证]
